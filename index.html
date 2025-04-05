@@ -1,10 +1,43 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>html_in_html</title>
-    </head>
-    <body>
-        <iframe src="BIN2ASM.HTML" width="500" height="500"></iframe>
-    </body>
+<html>
+<head>
+<style>
+  /* CSSコード */
+.br1 {
+  color:black;
+}
+
+.br2 {
+  border: 2px solid #000;
+  background-color:#000;
+}
+</style>
+</head>
+
+
+  <body text="lightgray">
+    <div id="Zone" class="br1">
+    ［BIN2ASM］ バイナリファイルをアセンブリ言語のソースに組み込みたい<br><br>
+    
+      【注意事項】<br>
+      　このページは、ドロップされたファイル データをネットワークに転送することを目的としたものではありません。<br>ただし、セキュリティ上の理由から、<u>著作権で保護されたファイル、機密情報、個人情報などのファイルをブラウザにドロップしないこと</u>を強くお勧めします。<br><br>
+
+      【謝辞】<br>
+      　以下の記事を元に作成させていただきました。@kob58im様、ありがとうございます。<br>
+      <a href="https://qiita.com/kob58im/items/d9a64e77cbba933aa97e">https://qiita.com/kob58im/items/d9a64e77cbba933aa97e</a><br><br>
+
+      【使い方】<br>
+      　黒い所にファイルをドロップしてください。（サイズが大きいファイルは対応できない場合があります）<br>
+      先頭１バイト（0FEhかどうか）で識別し、ヘッダ（７バイト）で改行します。<br>
+
+      <br>
+      <progress id="progBar" max="100" value="0" style="width: 80px; "></progress>
+      <output id="outFileInfo"></output><br>
+    </div>
+    <br>
+    <div id="dropZone" class="br2">
+      <output id="outContent"></output>
+    </div>
+<script async src=".\BIN2ASM.JS"></script>
+  </body>
+  
 </html>
